@@ -1,5 +1,5 @@
 # Yeasy (Web App)
-[**Yeasy**] is a Web-based Application constructed using ***Docker*** through ***AWS*** Platform. [**Yeasy**] Uses EC2 Instances to Host the Application, whereby the Yeasy itself is Running in a Docker Container, Placed In-Front of the Container is a Reverse Proxy.
+[**Yeasy**] is a Web-based Application constructed using ***Docker*** through ***AWS*** Platform. [**Yeasy**] Uses EC2 Instances to Host the Application, whereby the Yeasy itself is Running in a Docker Container, placed In-Front of the Container is a Reverse Proxy and Load Balancer done using Nginx.
 <hr/><br/>
 
 ## Step 1: Creating a S3 Bucket *(3 Steps)*
@@ -110,7 +110,7 @@ curl -kX GET http://localhost:5000/v2/_catalog
 ```
 <br/>
 
-## Step 6: Setup Nginx as a Reserve Proxy and Load Balancer to the WebApp *(4 Steps)*
+## Step 6: Setup Nginx as a Reserve Proxy and Load Balancer to the WebApp *(6 Steps)*
 1) Run the 3 Yeasy Webapp Containers
 ```
 sudo docker run -d -p 7777:80 --name yeasy-webapp-1 localhost:5000/yeasy/simple-web
